@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nerko+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
 
+/* Reset de Estilos */
 * {
   margin: 0;
   padding: 0;
@@ -12,84 +13,64 @@
   font-family: "inter", sans-serif;
 }
 
+/* Estilos para o Body */
 body {
-  background-image: url("img/background.jpg");
-  background-size: 5000px 3000px;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100vh;
-  transition: background 0.2s linear;
-  transition: transform 1s ease;
+  transition: background 0.2s linear, transform 1s ease; /* Unifique as transições */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body.dark {
-  background-image: url("img/backgrounddark.jpg");
-  transition: 1s;
+hr {
+  border: 0;
+  height: 2px;
+  background-color: #ccc; /* Cor da linha */
+  margin: 20px 0; /* Espaçamento acima e abaixo da linha */
 }
 
-body.dark .menu nav a {
-  color: white;
-  transition: 1s;
+body.dark {
+  background-color: var(--color-neutral-10);
+  transition: background 1s, color 1s; /* Simplifique as transições */
+}
+
+body.dark .menu nav a,
+body.dark .sociais a i,
+body.dark .titulo,
+body.dark .maxwtext,
+body.dark h2.titulo2 {
+  color: #b0b0b0;
 }
 
 body.dark .menu nav a:hover::after {
   width: 100%;
-  background-color: yellow;
-}
-
-body.dark .menu nav a::after {
-  background-color: white;
+  background-color: #b0b0b0;
 }
 
 body.dark .logo img {
-  transform: scale(
-    1.05
-  ); /* Altera o tamanho levemente quando no modo dark, por exemplo */
-}
-
-body.dark .sociais a i {
-  color: white;
-  transition: 1s;
-}
-
-body.dark .titulo {
-  color: white;
-  transition: 1s;
-}
-
-body.dark .maxwtext {
-  color: rgb(167, 167, 167);
-  transition: 1s;
+  transform: scale(1.05);
 }
 
 body.dark .flexflexcol2 button {
   color: black;
-  background-color: white;
-  transition: 1s;
+  background-color: #b0b0b0;
 }
 
 body.dark .flexflexcol2 button:hover {
   background-color: rgb(150, 149, 149);
-  transition: 1s;
 }
 
 body.dark .label {
   background-color: white;
-  transition: 1s;
 }
 
 body.dark .label .ball {
-  background-color: black;
-  transition: 1s;
-}
-
-body.dark h2.titulo2 {
-  color: white;
+  background-color: #b0b0b0;
 }
 
 body.dark form .btn-enviar input,
@@ -97,10 +78,34 @@ body.dark form .btn-enviar input:hover {
   background-color: rgb(2, 255, 2);
 }
 
+body.dark .menu nav a::after,
 body.dark form input,
 body.dark form textarea {
-  background-color: white;
-  color: black;
+  background-color: #b0b0b0;
+  color: #e1e1e1;
+}
+
+body.dark .maxwtext2 {
+  color: #b0b0b0;
+}
+
+body.dark hr {
+  background-color: #000;
+}
+
+body,
+.menu nav a,
+.sociais a i,
+.logo img,
+.themdl label .ball {
+  transition: all 0.3s ease; /* Aplicação global de transições */
+}
+
+/* Seção Header */
+header {
+  background-color: transparent;
+  width: 100%;
+  padding: 5px;
 }
 
 .container {
@@ -112,12 +117,6 @@ body.dark form textarea {
   padding: 10px;
 }
 
-header {
-  background-color: transparent;
-  width: 100%;
-  padding: 5px;
-}
-
 .logo,
 .sociais {
   width: 20%;
@@ -126,7 +125,7 @@ header {
 .logo img {
   width: 150px;
   cursor: pointer;
-  transition: transform 1s ease;
+  transition: transform 0.5s ease; /* Transição mais rápida */
 }
 
 .menu {
@@ -139,35 +138,27 @@ header {
 
 .menu nav a {
   font-family: "Roboto", sans-serif;
-  color: black;
+  color: #333333;
   text-decoration: none;
   padding-right: 10px;
   font-size: 15px;
   position: relative;
-  transition: transform 1s ease;
+  transition: color 0.3s ease, transform 0.3s ease; /* Adicionada transição para cor */
 }
 
 .menu nav a::after {
-  content: " ";
-  width: 0px;
+  content: "";
+  width: 0;
   height: 4px;
-  background-color: black;
+  background-color: #333333;
   position: absolute;
   top: 17px;
   left: 0;
-  transition: width 0.5s;
+  transition: width 0.3s ease; /* Ajuste na transição */
 }
 
 .menu nav a:hover::after {
   width: 30px;
-}
-
-body,
-.menu nav a,
-.sociais a i,
-.logo img,
-.themdl label .ball {
-  transition: all 0.3s ease;
 }
 
 .checkbox {
@@ -180,16 +171,8 @@ body,
   transform: translateX(24px);
 }
 
-.fa-moon {
-  color: #f1c40f;
-}
-
-.fa-sun {
-  color: #f39c12;
-}
-
 .label {
-  background-color: #111;
+  background-color: #333333;
   border-radius: 50px;
   cursor: pointer;
   display: flex;
@@ -201,7 +184,15 @@ body,
   width: 50px;
   transform: scale(1.5);
   margin-right: 20px;
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
 }
 
 .label .ball {
@@ -212,13 +203,11 @@ body,
   left: 2px;
   height: 22px;
   width: 22px;
-  transform: translateX(0px);
-  transition: transform 0.2s linear;
-  transition: transform 1s ease;
+  transition: transform 0.3s ease; /* Ajuste na transição */
 }
 
 .sociais a {
-  display: inline-block; /* Mantém o ícone alinhado */
+  display: inline-block;
   height: 20px;
   background: none;
   border: none;
@@ -227,17 +216,13 @@ body,
 }
 
 .sociais a i {
-  color: black;
+  color: #333333;
   font-size: 20px;
-  transition: transform 1s ease;
+  transition: color 0.3s ease, transform 0.3s ease; /* Suavizar transição */
 }
 
-.flexflexcol2 a {
-  color: black;
-  text-decoration: none;
-}
+/* Seção principal com o título e descrição */
 
-/* Estilos para primeira a main */
 main.flex1 {
   display: flex;
   justify-content: center;
@@ -246,14 +231,12 @@ main.flex1 {
   margin-bottom: 60px;
 }
 
-/* Estilos para a section */
 section.wfull {
   width: 100%;
   padding: 20px;
   background-color: transparent;
 }
 
-/* Estilos para as divs internas */
 .px4 {
   padding: 16px;
 }
@@ -265,66 +248,65 @@ section.wfull {
 }
 
 .flexflexcol {
-  display: flex; /* Define o container como flexível */
-  flex-direction: column; /* Alinha os itens em coluna */
-  align-items: left; /* Centraliza os itens horizontalmente */
-  text-align: left; /* Centraliza o texto */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Ajustado para alinhamento à esquerda */
+  text-align: left;
 }
 
 .spacey2 {
-  margin-bottom: 15px; /* Adiciona um espaçamento inferior */
+  margin-bottom: 15px;
 }
 
 .titulo {
   font-family: "Nerko One", cursive;
-  font-size: 4.5em; /* Tamanho da fonte do título */
-  font-weight: bold; /* Negrito para o título */
+  font-size: 4.5em;
+  font-weight: bold;
   line-height: 3.5rem;
-  color: black; /* Cor do título */
-  text-align: left; /* Alinhamento do texto do título */
-  margin-top: 20px; /* Margem superior para o título */
-  margin-bottom: 10px; /* Margem inferior para o título */
+  color: #333333;
+  text-align: left;
+  margin: 20px 0 10px 0; /* Margem superior e inferior simplificada */
+  padding: 125px 0 0 100px; /* Simplificada a ordem do padding */
+  transition: transform 0.8s ease; /* Transição mais rápida */
+}
+
+.maxwtext {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: #666666;
+  line-height: 1.35rem;
+  text-align: justify;
+  max-width: 500px;
   padding-left: 100px;
-  padding-top: 125px;
-  transition: transform 1s ease;
+  transition: transform 0.8s ease; /* Transição mais rápida */
 }
 
 .flexflexcol2 {
   padding-left: 100px;
 }
 
-/* Estilização do texto (p) */
-.maxwtext {
-  font-family: "Roboto", sans-serif; /* fonte usada no subtitulo */
-  font-size: 1.2em; /* Tamanho da fonte */
-  color: rgb(79, 79, 79); /* Cor da fonte */
-  line-height: 1.35rem; /* Espaçamento entre linhas */
-  text-align: justify; /* Justificação do texto para um visual alinhado */
-  max-width: 500px; /* Largura máxima do texto */
-  padding-left: 100px; /* Adiciona um pouco de espaçamento interno nas laterais */
-  transition: transform 1s ease;
-}
-
-/* Botão para explorar módulos */
 .flexflexcol2 button {
   font-family: "Kanit", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  background-color: black; /* Cor de fundo do botão */
-  color: aliceblue; /* Cor do texto do botão */
-  padding: 10px 23px; /* Espaçamento interno do botão */
-  border: none; /* Remover borda do botão */
-  border-radius: 8px; /* Arredondar bordas do botão */
-  cursor: pointer; /* Cursor de ponteiro para indicar que o botão é clicável */
-  transition: background-color 0.8s ease; /* Transição suave para hover */
+  background-color: #6c757d;
+  color: #ffffff;
+  padding: 10px 23px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.5s ease; /* Transição simplificada */
 }
 
 .flexflexcol2 button:hover {
-  background-color: rgb(48, 48, 48);
-  transition: transform 1s ease;
+  background-color: #5a6268;
 }
 
-/* Estilo do slider */
+.flexflexcol2 a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Início do Carrossel de Slides */
 .slider {
   margin-left: 1000px;
   margin-top: -450px;
@@ -335,7 +317,6 @@ section.wfull {
   position: relative; /* Necessário para posicionamento absoluto dos controles */
 }
 
-/* Estilo dos slides */
 .slides {
   width: 400%;
   height: 600px;
@@ -356,7 +337,45 @@ section.wfull {
   width: 600px;
 }
 
-/* Navegação manual escondida inicialmente */
+.slider:hover .navigation-auto {
+  opacity: 1; /* Mostra as bolinhas */
+}
+
+.navigation-auto {
+  position: absolute;
+  width: 600px;
+  margin-top: 560px;
+  display: flex;
+  justify-content: center;
+  opacity: 0; /* Esconde inicialmente */
+  transition: opacity 0.5s; /* Transição suave para a visibilidade */
+}
+
+.navigation-auto div {
+  border: 2px solid white;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.navigation-auto div:not(:last-child) {
+  margin-right: 30px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1,
+#radio2:checked ~ .navigation-auto .auto-btn2,
+#radio3:checked ~ .navigation-auto .auto-btn3,
+#radio4:checked ~ .navigation-auto .auto-btn4,
+#radio5:checked ~ .navigation-auto .auto-btn5,
+#radio6:checked ~ .navigation-auto .auto-btn6 {
+  background-color: white;
+}
+
+.slider:hover .manual-navigation {
+  opacity: 1; /* Mostra as bolinhas */
+}
+
 .manual-navigation {
   position: absolute;
   width: 600px;
@@ -365,28 +384,6 @@ section.wfull {
   justify-content: center;
   opacity: 0; /* Esconde inicialmente */
   transition: opacity 0.5s; /* Transição suave para a visibilidade */
-}
-
-/* Botão de navegação manual */
-.manual-btn {
-  border: 2px solid white;
-  padding: 8px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.7s;
-}
-
-.manual-btn:not(:last-child) {
-  margin-right: 30px;
-}
-
-.manual-btn:hover {
-  background-color: white;
-}
-
-/* Mostra a navegação manual ao passar o mouse no slider */
-.slider:hover .manual-navigation {
-  opacity: 1; /* Mostra as bolinhas */
 }
 
 #radio1:checked ~ .first {
@@ -413,46 +410,27 @@ section.wfull {
   margin-left: -125%;
 }
 
-.navigation-auto div {
+.manual-btn {
   border: 2px solid white;
   padding: 8px;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.7s;
 }
 
-.navigation-auto {
-  position: absolute;
-  width: 600px;
-  margin-top: 560px;
-  display: flex;
-  justify-content: center;
-  opacity: 0; /* Esconde inicialmente */
-  transition: opacity 0.5s; /* Transição suave para a visibilidade */
-}
-
-.navigation-auto div:not(:last-child) {
+.manual-btn:not(:last-child) {
   margin-right: 30px;
 }
 
-.slider:hover .navigation-auto {
-  opacity: 1; /* Mostra as bolinhas */
-}
-
-/* Estilos para o estado selecionado das bolinhas */
-#radio1:checked ~ .navigation-auto .auto-btn1,
-#radio2:checked ~ .navigation-auto .auto-btn2,
-#radio3:checked ~ .navigation-auto .auto-btn3,
-#radio4:checked ~ .navigation-auto .auto-btn4,
-#radio5:checked ~ .navigation-auto .auto-btn5,
-#radio6:checked ~ .navigation-auto .auto-btn6 {
+.manual-btn:hover {
   background-color: white;
 }
 
+/* Seção dos Módulos do Curso */
+
 .container2 {
   width: 100%;
-  height: 100vh; /* Ajusta a altura para ocupar a tela toda, se necessário */
-  background-color: rgb(175, 175, 175);
+  height: 80vh; /* Ajusta a altura para ocupar a tela toda, se necessário */
   display: flex; /* Para alinhar os itens dentro do main */
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
@@ -464,7 +442,7 @@ section.wfull {
   font-size: 50px;
   text-align: center;
   margin: 25px 0; /* Margem superior e inferior para espaçamento */
-  color: black;
+  color: green;
 }
 
 .maxwtext2 {
@@ -472,7 +450,7 @@ section.wfull {
   text-align: center;
   max-width: 600px;
   line-height: 1.2;
-  color: #313131;
+  color: #666666;
 }
 
 .cards {
@@ -539,7 +517,7 @@ section.wfull {
 h2.titulo2 {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
-  color: black;
+  color: #333333;
   font-size: 38px;
   text-align: center;
 }
@@ -566,12 +544,12 @@ form {
 form input,
 form textarea {
   width: 100%;
-  background-color: #242424;
+  background-color: #333333;
   border: 0;
   outline: 0;
   padding: 20px 15px;
   border-radius: 15px;
-  color: #fff;
+  color: #666666;
   font-size: 18px;
 }
 
