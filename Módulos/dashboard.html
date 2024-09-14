@@ -26,12 +26,28 @@
       <main id="main-content">
         <div id="dashboard-controls">
           <div id="search-container">
+            <select id="category-filter">
+              <option value="all">Todos</option>
+              <option value="Fundamentos">Fundamentos</option>
+              <option value="Anatomia">Anatomia</option>
+              <option value="Fisiologia">Fisiologia</option>
+              <!-- Adicione mais categorias conforme necessário -->
+            </select>
             <input
               type="text"
               id="search-input"
               placeholder="Pesquisar modulos..."
+              aria-label="Campo de pesquisa para módulos"
             />
-            <button id="search-button">Pesquisar</button>
+            <button
+              id="search-button"
+              aria-label="Clique para iniciar a pesquisa"
+            >
+              Pesquisar
+            </button>
+            <p id="no-results-message" style="display: none">
+              Esse módulo não foi encontrado.
+            </p>
           </div>
           <button id="dark-mode-toggle">Modo Escuro</button>
         </div>
@@ -44,11 +60,12 @@
             Fundamentos da Enfermagem
           </h2>
           <div class="module-grid">
-            <article class="module-card">
+            <article class="module-card" data-category="Fundamentos">
               <img
                 src="./Img/AvaliaçãodoPaciente.png"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Avaliação do Paciente</h3>
               <p class="module-description">
@@ -56,19 +73,25 @@
                 monitoramento dos sinais vitais.
               </p>
             </article>
-            <article class="module-card">
-              <img src="./Img/Higienize.png" alt="" class="module-image" />
+            <article class="module-card" data-category="Fundamentos">
+              <img
+                src="./Img/Higienize.png"
+                alt=""
+                class="module-image"
+                loading="lazy"
+              />
               <h3 class="module-title">Controle de Infecção</h3>
               <p class="module-description">
                 Compreender os princípios e práticas de prevenção e controle de
                 infecções.
               </p>
             </article>
-            <article class="module-card">
+            <article class="module-card" data-category="Fundamentos">
               <img
                 src="./Img/AdministraçãodeMedicamentos.png"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Administração de Medicamentos</h3>
               <p class="module-description">
@@ -85,11 +108,12 @@
         >
           <h2 id="anatomy-heading" class="section-heading">Anatomia</h2>
           <div class="module-grid">
-            <article class="module-card">
+            <article class="module-card" data-category="Anatomia">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 1</h3>
               <p class="module-description">
@@ -99,11 +123,12 @@
                 dolorum consequatur, numquam minus.
               </p>
             </article>
-            <article class="module-card">
+            <article class="module-card" data-category="Anatomia">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 2</h3>
               <p class="module-description">
@@ -113,11 +138,12 @@
                 dolorum consequatur, numquam minus.
               </p>
             </article>
-            <article class="module-card">
+            <article class="module-card" data-category="Anatomia">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 3</h3>
               <p class="module-description">
@@ -136,11 +162,12 @@
         >
           <h2 id="physiology-heading" class="section-heading">Fisiologia</h2>
           <div class="module-grid">
-            <article class="module-card">
+            <article class="module-card" data-category="Fisiologia">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 1</h3>
               <p class="module-description">
@@ -150,11 +177,12 @@
                 dolorum consequatur, numquam minus.
               </p>
             </article>
-            <article class="module-card">
+            <article class="module-card" data-category="Fisiologia">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 2</h3>
               <p class="module-description">
@@ -164,11 +192,12 @@
                 dolorum consequatur, numquam minus.
               </p>
             </article>
-            <article class="module-card">
+            <article class="module-card" data-category="Fisiologia">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 3</h3>
               <p class="module-description">
@@ -187,11 +216,12 @@
         >
           <h2 id="construct-heading" class="section-heading">Em Construção</h2>
           <div class="module-grid">
-            <article class="module-card">
+            <article class="module-card" data-category="Em-construcao">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 1</h3>
               <p class="module-description">
@@ -201,11 +231,12 @@
                 dolorum consequatur, numquam minus.
               </p>
             </article>
-            <article class="module-card">
+            <article class="module-card" data-category="Em-construcao">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
                 class="module-image"
+                loading="lazy"
               />
               <h3 class="module-title">Modulo 2</h3>
               <p class="module-description">
@@ -215,7 +246,7 @@
                 dolorum consequatur, numquam minus.
               </p>
             </article>
-            <article class="module-card">
+            <article class="module-card" data-category="Em-construcao">
               <img
                 src="/placeholder.svg?height=150&width=250"
                 alt=""
@@ -232,6 +263,17 @@
           </div>
         </section>
       </main>
+      <!-- Botão Voltar ao Topo -->
+      <button id="back-to-top" title="Voltar ao Topo">
+        &#9650;
+        <!-- Código HTML para a seta para cima -->
+      </button>
+      <img
+        class="lazy"
+        data-src="caminho/para/sua-imagem.jpg"
+        alt="Descrição da Imagem"
+        src="placeholder.jpg"
+      />
       <footer id="main-footer">
         <p>
           &copy; 2024 Programa de Educação à Enfermagem SmartHub. Todos Direitos

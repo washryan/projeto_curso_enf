@@ -65,7 +65,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3 ease;
+  transition: color 0.3s ease;
 }
 
 #main-nav ul li a:hover {
@@ -197,6 +197,24 @@ body.dark-mode .section-heading {
   margin-right: 1rem;
 }
 
+#category-filter {
+  padding: 8px 1px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+#filters {
+  margin: 20px 0;
+}
+
+#category-filter {
+  padding: 10px;
+  margin-right: 10px;
+}
+
 #search-input {
   padding: 0.5rem;
   width: 100%;
@@ -221,6 +239,21 @@ body.dark-mode .section-heading {
 
 #search-button:hover {
   background-color: var(--primary-dark);
+}
+
+#no-results-message {
+  display: none; /* A mensagem só aparecerá quando o JS a exibir */
+  color: #ff4c4c; /* Escolhi uma cor vermelha para chamar atenção */
+  font-size: 1.2rem; /* Ajuste o tamanho da fonte */
+  text-align: center; /* Centraliza a mensagem na tela */
+  font-weight: bold; /* Deixa o texto em negrito */
+  background-color: #ffe5e5; /* Fundo levemente rosado */
+  padding: 5px; /* Adiciona um espaçamento interno */
+  border-radius: 5px; /* Arredonda os cantos da mensagem */
+  width: 100%; /* Para garantir que ela ocupe toda a largura disponível */
+  max-width: 500px; /* Limita a largura máxima */
+  margin-left: 20px;
+  margin-right: auto; /* Centraliza horizontalmente */
 }
 
 #dark-mode-toggle {
@@ -249,6 +282,41 @@ body.dark-mode .section-heading {
 .module-card.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #6ee7b7;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Inicialmente oculto */
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+#back-to-top:hover {
+  background-color: #4dd4a6; /* Cor um pouco mais escura ao passar o mouse */
+}
+
+#back-to-top:focus {
+  outline: none; /* Remove a borda de foco padrão */
+}
+
+.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lazy.loaded {
+  opacity: 1;
 }
 
 /* Footer */
@@ -288,6 +356,18 @@ body.dark-mode .section-heading {
   #dark-mode-toggle {
     width: 100%;
   }
+
+  #site-title {
+    font-size: 1.5rem;
+  }
+
+  .module-card {
+    padding: 1rem;
+  }
+
+  .module-description {
+    font-size: 0.8rem;
+  }
 }
 
 /* Acessibilidades */
@@ -299,7 +379,6 @@ body.dark-mode .section-heading {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
 }
