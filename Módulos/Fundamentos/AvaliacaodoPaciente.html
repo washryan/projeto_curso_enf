@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliação do Paciente em Enfermagem</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/4d4518dded.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://smarthubcursoenf.vercel.app"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ryanleall/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://bsky.app/profile/ryanle.bsky.social"
+              target="_blank"
+              ><i class="fa-brands fa-bluesky"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/washryan" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://wa.link/wyd6r5" target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="mode-label">Modo Escuro</span>
+          </li>
+        </ul>
+      </nav>
+      <h1>Avaliação do Paciente</h1>
+      <p>Enfermagem</p>
+    </header>
+    <main>
+      <section>
+        <h2>Introdução</h2>
+        <p>
+          A avaliação do paciente é um processo fundamental em enfermagem para
+          coletar informações importantes sobre o estado de saúde do paciente.
+          Essa avaliação permite que os profissionais de saúde identifiquem
+          necessidades, elaborem planos de cuidados e acompanhem a evolução do
+          tratamento.
+        </p>
+      </section>
+
+      <section>
+        <h2>Objetivos da Avaliação do Paciente</h2>
+        <ul>
+          <li>Identificar problemas de saúde atuais e potenciais;</li>
+          <li>Monitorar os sinais vitais e parâmetros clínicos;</li>
+          <li>Estabelecer um plano de cuidados personalizado;</li>
+          <li>Garantir a segurança do paciente durante o tratamento;</li>
+          <li>
+            Promover a comunicação eficaz entre a equipe de saúde e o paciente.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Principais Aspectos da Avaliação</h2>
+        <p>
+          A avaliação do paciente envolve a coleta de dados objetivos e
+          subjetivos. Esses dados são obtidos através da anamnese (entrevista
+          com o paciente), exame físico e observação clínica. Alguns aspectos
+          importantes incluem:
+        </p>
+        <ul>
+          <li>Histórico médico e cirúrgico do paciente;</li>
+          <li>
+            Sinais vitais (temperatura, pressão arterial, frequência cardíaca,
+            frequência respiratória);
+          </li>
+          <li>Estado mental e nível de consciência;</li>
+          <li>
+            Exame de pele, sistema respiratório, cardiovascular e neurológico;
+          </li>
+          <li>Avaliação da dor e desconforto.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Sinais Vitais</h2>
+        <p>
+          Os sinais vitais são indicadores essenciais do estado fisiológico do
+          paciente. Durante a avaliação, os enfermeiros medem:
+        </p>
+        <ul>
+          <li>
+            <strong>Temperatura corporal:</strong> Avalia a presença de febre ou
+            hipotermia;
+          </li>
+          <li>
+            <strong>Pressão arterial:</strong> Importante para detectar
+            hipertensão ou hipotensão;
+          </li>
+          <li>
+            <strong>Frequência cardíaca:</strong> Indicativo do ritmo e da força
+            do pulso;
+          </li>
+          <li>
+            <strong>Frequência respiratória:</strong> Mede a respiração e
+            identifica anomalias;
+          </li>
+          <li>
+            <strong>Saturação de oxigênio:</strong> Mostra a oxigenação do
+            sangue.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Conclusão</h2>
+        <p>
+          A avaliação do paciente é essencial para garantir um cuidado seguro e
+          eficaz. Ela fornece uma base sólida para o planejamento das
+          intervenções de enfermagem e contribui para a recuperação do paciente.
+          A comunicação com o paciente durante a avaliação também promove
+          confiança e cooperação no tratamento.
+        </p>
+      </section>
+      <section id="video-lesson">
+        <h2>Aula em Vídeo: Avaliação do Paciente</h2>
+        <div class="video-container">
+          <div id="player"></div>
+        </div>
+        <div class="video-controls">
+          <button id="playPauseBtn" class="control-btn">
+            <i class="fas fa-play"></i> Play/Pause
+          </button>
+          <button id="muteBtn" class="control-btn">
+            <i class="fas fa-volume-up"></i> Mute/Unmute
+          </button>
+        </div>
+      </section>
+      <section class="quiz">
+        <h2>Quiz Rápido</h2>
+        <div id="quiz-container">
+          <div class="question">
+            <p>
+              1. Qual dos seguintes NÃO é tipicamente incluído nos sinais
+              vitais?
+            </p>
+            <input type="radio" name="q1" value="a" /> a) Pressão Arterial<br />
+            <input type="radio" name="q1" value="b" /> b) Temperatura<br />
+            <input type="radio" name="q1" value="c" /> c) Frequência
+            Respiratória<br />
+            <input type="radio" name="q1" value="d" /> d) Cor da Pele
+          </div>
+          <div class="question">
+            <p>
+              2. O que significa a sigla SAMPLE na coleta de histórico do
+              paciente?
+            </p>
+            <input type="radio" name="q2" value="a" /> a) Sintomas, Alergias,
+            Medicações, Passado médico, Última refeição, Eventos que levaram à
+            doença ou lesão<br />
+            <input type="radio" name="q2" value="b" /> b) Sinais, Avaliação,
+            Monitoramento, Procedimentos, Laboratório, Evolução<br />
+            <input type="radio" name="q2" value="c" /> c) Situação, Ação,
+            Manejo, Planejamento, Aprendizado, Execução<br />
+            <input type="radio" name="q2" value="d" /> d) Segurança, Ar,
+            Medicação, Posicionamento, Iluminação, Equipamento
+          </div>
+          <button onclick="checkAnswers()">Enviar Respostas</button>
+        </div>
+        <div id="result"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 - Curso de Enfermagem - Avaliação do Paciente</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

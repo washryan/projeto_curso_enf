@@ -202,4 +202,13 @@ $(document).ready(function () {
       };
     });
   }
+
+  document.querySelectorAll(".module-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      const url = card.getAttribute("data-url");
+      if (url) {
+        window.open(url, "_blank"); // Abre o link em uma nova aba
+      }
+    });
+  });
 });
