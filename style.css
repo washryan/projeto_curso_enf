@@ -330,6 +330,34 @@ body.dark-mode {
   left: 0;
 }
 
+.timeline-semestre-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline-semestre-item::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: -17px;
+  background-color: var(--white);
+  border: 4px solid var(--accent-color);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-semestre-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-semestre-item:nth-child(odd) {
+  left: 0;
+}
+
 .timeline-content {
   padding: 20px 30px;
   background-color: var(--white);
@@ -391,7 +419,7 @@ body.dark-mode {
 /* Footer Styles */
 .footer {
   background-color: #333;
-  color: var(--white);
+  color: white;
   padding: 50px 0 20px;
 }
 
@@ -422,7 +450,7 @@ body.dark-mode {
 }
 
 .footer-links ul li a {
-  color: var(--white);
+  color: white;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -432,7 +460,7 @@ body.dark-mode {
 }
 
 .footer-social a {
-  color: var(--white);
+  color: white;
   font-size: 1.5rem;
   margin-right: 15px;
   transition: color 0.3s;
