@@ -297,6 +297,128 @@ body.dark-mode .control-btn:hover {
   background-color: #4caf50;
 }
 
+/* Highlighter styles */
+.highlighter-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.highlighter-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+.highlighter-btn.active {
+  background-color: #ffd700;
+}
+
+.highlighter-btn i {
+  margin-right: 5px;
+}
+
+.highlight {
+  background-color: yellow;
+  color: black;
+}
+
+#saved-highlights {
+  margin-top: 2em;
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
+}
+
+#highlightsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#highlightsList li {
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.highlight-text {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.highlight-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-highlight,
+.delete-highlight {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+edit-highlight:hover,
+.delete-highlight:hover {
+  background-color: #45a049;
+}
+
+.delete-highlight {
+  background-color: #f44336;
+}
+
+.delete-highlight:hover {
+  background-color: #d32f2f;
+}
+
+/* Dark mode styles for highlighter */
+body.dark-mode .highlighter-btn,
+body.dark-mode .edit-highlight {
+  background-color: #45a049;
+}
+
+body.dark-mode .highlighter-btn:hover,
+body.dark-mode .edit-highlight:hover {
+  background-color: #4caf50;
+}
+
+body.dark-mode .highlight,
+body.dark-mode .highlighter-btn.active {
+  background-color: #ffd700;
+}
+
+body.dark-mode #highlightsList li {
+  background-color: #3a3a3a;
+  color: #f4f4f4;
+}
+
+body.dark-mode .delete-highlight {
+  background-color: #d32f2f;
+}
+
+body.dark-mode .delete-highlight:hover {
+  background-color: #f44336;
+}
+
 /* Responsive styles for devices up to 768px */
 @media screen and (max-width: 768px) {
   body {
@@ -376,5 +498,26 @@ body.dark-mode .control-btn:hover {
   .control-btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .highlighter-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  #highlightsList li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .highlight-actions {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+
+  .highlighter-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 }
