@@ -716,15 +716,15 @@ footer {
 #backToTopBtn {
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 30px;
+  bottom: 100px;
+  right: 25px;
   z-index: 99;
-  font-size: 18px;
-  background-color: green;
+  font-size: 16px;
+  background-color: #45a049;
   color: #000;
   border: none;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 50%;
+  padding: 20px;
   cursor: pointer;
   transition: opacity 0.3s;
 }
