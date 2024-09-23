@@ -98,56 +98,6 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("darkMode", isDark);
   }
 
-  // YouTube API code
-  var tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName("script")[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player("player", {
-      height: "360",
-      width: "640",
-      videoId: "-abh3n5AxDE", // Replace with your actual YouTube video ID
-      playerVars: {
-        playsinline: 1,
-      },
-      events: {
-        onReady: onPlayerReady,
-      },
-    });
-  }
-
-  function onPlayerReady(event) {
-    // Video is ready to play
-    $("#playPauseBtn").click(function () {
-      if (player.getPlayerState() == YT.PlayerState.PLAYING) {
-        player.pauseVideo();
-        $(this).find("i").removeClass("fa-pause").addClass("fa-play");
-      } else {
-        player.playVideo();
-        $(this).find("i").removeClass("fa-play").addClass("fa-pause");
-      }
-    });
-
-    $("#muteBtn").click(function () {
-      if (player.isMuted()) {
-        player.unMute();
-        $(this)
-          .find("i")
-          .removeClass("fa-volume-mute")
-          .addClass("fa-volume-up");
-      } else {
-        player.mute();
-        $(this)
-          .find("i")
-          .removeClass("fa-volume-up")
-          .addClass("fa-volume-mute");
-      }
-    });
-  }
-
   // Existing dark mode and YouTube functionality remains unchanged
 
   $(document).ready(function () {
@@ -304,3 +254,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 });
+
+var tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "360",
+    width: "640",
+    videoId: "-abh3n5AxDE", // Replace with your actual YouTube video ID
+    playerVars: {
+      playsinline: 1,
+    },
+    events: {
+      onReady: onPlayerReady,
+    },
+  });
+}
+
+function onPlayerReady(event) {
+  // Video is ready to play
+  $("#playPauseBtn").click(function () {
+    if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+      player.pauseVideo();
+      $(this).find("i").removeClass("fa-pause").addClass("fa-play");
+    } else {
+      player.playVideo();
+      $(this).find("i").removeClass("fa-play").addClass("fa-pause");
+    }
+  });
+
+  $("#muteBtn").click(function () {
+    if (player.isMuted()) {
+      player.unMute();
+      $(this).find("i").removeClass("fa-volume-mute").addClass("fa-volume-up");
+    } else {
+      player.mute();
+      $(this).find("i").removeClass("fa-volume-up").addClass("fa-volume-mute");
+    }
+  });
+}

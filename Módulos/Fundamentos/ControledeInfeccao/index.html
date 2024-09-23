@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controle de Infecção</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/4d4518dded.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://smarthubcursoenf.vercel.app"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ryanleall/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://bsky.app/profile/ryanle.bsky.social"
+              target="_blank"
+              ><i class="fa-brands fa-bluesky"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/washryan" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://wa.link/wyd6r5" target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider round"></span>
+            </label>
+            <span class="mode-label">Modo Escuro</span>
+          </li>
+        </ul>
+      </nav>
+      <h1>Controle de Infecção</h1>
+      <p>Enfermagem</p>
+    </header>
+    <main>
+      <section>
+        <h2>Introdução</h2>
+        <p>
+          O controle de infecção é fundamental na prática da enfermagem para
+          prevenir a disseminação de infecções em ambientes de saúde.
+        </p>
+      </section>
+
+      <section>
+        <h2>Tipos Comuns de Infecções</h2>
+        <p>Infecções comuns em ambientes hospitalares incluem:</p>
+        <ul>
+          <li>Infecções do trato urinário;</li>
+          <li>Pneumonia;</li>
+          <li>Infecções de corrente sanguínea;</li>
+          <li>Infecções cirúrgicas;</li>
+          <li>Infecções por Clostridium difficile.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Fatores de Risco</h2>
+        <p>Alguns fatores que aumentam o risco de infecções incluem:</p>
+        <ul>
+          <li>Idade avançada;</li>
+          <li>
+            Condições de saúde subjacentes (como diabetes e doenças pulmonares);
+          </li>
+          <li>Procedimentos invasivos;</li>
+          <li>Uso prolongado de antibióticos.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Protocolos de Desinfecção</h2>
+        <p>Protocolos de desinfecção eficazes incluem:</p>
+        <ul>
+          <li>Limpeza frequente de superfícies;</li>
+          <li>Desinfecção de equipamentos médicos;</li>
+          <li>Uso de produtos recomendados pela saúde pública;</li>
+          <li>Treinamento da equipe sobre práticas de higiene.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Educação do Paciente</h2>
+        <p>
+          A educação do paciente sobre a prevenção de infecções é crucial e pode
+          incluir:
+        </p>
+        <ul>
+          <li>Importância da higiene das mãos;</li>
+          <li>Adesão a recomendações médicas;</li>
+          <li>Reconhecimento de sinais de infecção.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Estatísticas</h2>
+        <p>
+          Dados mostram que infecções hospitalares são responsáveis por um
+          grande número de complicações e mortes. A implementação de medidas de
+          controle de infecção pode reduzir significativamente esses números.
+        </p>
+      </section>
+
+      <section>
+        <h2>Casos de Estudo</h2>
+        <p>
+          Casos de surtos de infecção podem fornecer lições valiosas. Um exemplo
+          é o surto de infecção por MRSA, que levou à revisão de protocolos de
+          desinfecção e à melhoria da higiene em muitos hospitais.
+        </p>
+      </section>
+
+      <section>
+        <h2>Tecnologia no Controle de Infecção</h2>
+        <p>
+          A tecnologia tem um papel crescente no controle de infecções,
+          incluindo:
+        </p>
+        <ul>
+          <li>Monitoramento eletrônico de infecções;</li>
+          <li>Sistemas de alerta para surtos;</li>
+          <li>Aplicativos de rastreamento de contatos.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Infecções em Tempo de Pandemia</h2>
+        <p>
+          A pandemia de COVID-19 trouxe à tona a importância do controle de
+          infecções, destacando a necessidade de protocolos robustos e educação
+          contínua.
+        </p>
+      </section>
+      <section id="video-lesson">
+        <h2>Aula em Vídeo: Controle de Infecção</h2>
+        <div class="video-container">
+          <div id="player"></div>
+        </div>
+        <div class="video-controls">
+          <button id="playPauseBtn" class="control-btn">
+            <i class="fas fa-play"></i> Play/Pause
+          </button>
+          <button id="muteBtn" class="control-btn">
+            <i class="fas fa-volume-up"></i> Mute/Unmute
+          </button>
+        </div>
+      </section>
+      <section id="saved-highlights">
+        <h2>Destaques Salvos</h2>
+        <ul id="highlightsList"></ul>
+      </section>
+      <section class="quiz">
+        <h2>Quiz Rápido</h2>
+        <div id="quiz-container">
+          <div class="question">
+            <p>
+              1. Qual das seguintes práticas é fundamental para o controle de
+              infecção?
+            </p>
+            <input type="radio" name="q1" value="a" /> a) Uso de EPIs<br />
+            <input type="radio" name="q1" value="b" /> b) Não lavar as mãos<br />
+            <input type="radio" name="q1" value="c" /> c) Compartilhar
+            equipamentos<br />
+            <input type="radio" name="q1" value="d" /> d) Ignorar protocolos
+          </div>
+          <div class="question">
+            <p>2. O que deve ser feito em caso de surto de infecção?</p>
+            <input type="radio" name="q2" value="a" /> a) Ignorar e seguir
+            normalmente<br />
+            <input type="radio" name="q2" value="b" /> b) Notificar a equipe de
+            saúde<br />
+            <input type="radio" name="q2" value="c" /> c) Suspender todas as
+            atividades<br />
+            <input type="radio" name="q2" value="d" /> d) Isolar o paciente sem
+            aviso
+          </div>
+          <button onclick="checkAnswers()">Enviar Respostas</button>
+        </div>
+        <div id="result"></div>
+      </section>
+      <script>
+        window.addEventListener("mouseover", initLandbot, { once: true });
+        window.addEventListener("touchstart", initLandbot, { once: true });
+        var myLandbot;
+        function initLandbot() {
+          if (!myLandbot) {
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.addEventListener("load", function () {
+              var myLandbot = new Landbot.Livechat({
+                configUrl:
+                  "https://storage.googleapis.com/landbot.online/v3/H-2616243-M2KEQF14S18I59GG/index.json",
+              });
+            });
+            s.src = "https://cdn.landbot.io/landbot-3/landbot-3.0.0.js";
+            var x = document.getElementsByTagName("script")[0];
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+      </script>
+    </main>
+    <footer>
+      <p>&copy; 2024 - Curso de Enfermagem - Controle de Infecção</p>
+    </footer>
+    <button
+      id="highlighterToggle"
+      class="highlighter-btn"
+      title="Ativar/Desativar Destaque"
+    >
+      <i class="fas fa-highlighter"></i>
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,523 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 1em 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 0.2em;
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}
+
+header p {
+  text-align: center;
+  font-style: italic;
+}
+
+/* Main content styles */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+  color: #4caf50;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1.25em;
+}
+h6 {
+  font-size: 1em;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+ul {
+  padding-left: 20px;
+  margin-bottom: 1em;
+}
+
+/* Quiz styles */
+.quiz {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-family: "Roboto Slab", serif;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-family: "Roboto Slab", serif;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode main {
+  background-color: #2c2c2c;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #4caf50;
+}
+
+body.dark-mode button {
+  background-color: #4caf50;
+}
+
+body.dark-mode button:hover {
+  background-color: #45a049;
+}
+
+/* Dark mode toggle styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.slider.round {
+  border-radius: 22px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.mode-label {
+  vertical-align: middle;
+  margin-left: 0.9em;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+#video-lesson {
+  margin-bottom: 2em;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+#player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-controls {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.control-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+  background-color: #45a049;
+}
+
+.control-btn i {
+  margin-right: 5px;
+}
+
+/* Dark mode styles for video section */
+body.dark-mode .control-btn {
+  background-color: #45a049;
+}
+
+body.dark-mode .control-btn:hover {
+  background-color: #4caf50;
+}
+
+/* Highlighter styles */
+.highlighter-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 23px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.highlighter-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+.highlighter-btn.active {
+  background-color: #ffd700;
+}
+
+.highlighter-btn i {
+  margin-right: 5px;
+}
+
+.highlight {
+  background-color: yellow;
+  color: black;
+}
+
+#saved-highlights {
+  margin-top: 2em;
+  border-top: 1px solid #ddd;
+  padding-top: 1em;
+}
+
+#highlightsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#highlightsList li {
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.highlight-text {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.highlight-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-highlight,
+.delete-highlight {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+edit-highlight:hover,
+.delete-highlight:hover {
+  background-color: #45a049;
+}
+
+.delete-highlight {
+  background-color: #f44336;
+}
+
+.delete-highlight:hover {
+  background-color: #d32f2f;
+}
+
+/* Dark mode styles for highlighter */
+body.dark-mode .highlighter-btn,
+body.dark-mode .edit-highlight {
+  background-color: #45a049;
+}
+
+body.dark-mode .highlighter-btn:hover,
+body.dark-mode .edit-highlight:hover {
+  background-color: #4caf50;
+}
+
+body.dark-mode .highlight,
+body.dark-mode .highlighter-btn.active {
+  background-color: #ffd700;
+}
+
+body.dark-mode #highlightsList li {
+  background-color: #3a3a3a;
+  color: #f4f4f4;
+}
+
+body.dark-mode .delete-highlight {
+  background-color: #d32f2f;
+}
+
+body.dark-mode .delete-highlight:hover {
+  background-color: #f44336;
+}
+
+/* Responsive styles for devices up to 768px */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    padding: 0.5em 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  main {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.75em;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  h5 {
+    font-size: 1.1em;
+  }
+  h6 {
+    font-size: 1em;
+  }
+
+  .question {
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 15px;
+  }
+  .switch {
+    width: 50px;
+    height: 28px;
+  }
+
+  .slider:before {
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+
+  .mode-label {
+    font-size: 14px;
+  }
+
+  .video-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .control-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .highlighter-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  #highlightsList li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .highlight-actions {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+
+  .highlighter-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
