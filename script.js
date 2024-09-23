@@ -1,46 +1,78 @@
-// Controle do carrossel de imagens
-let count = 1;
-document.getElementById("radio1").checked = true;
+$(document).ready(function () {
+  // Mobile Menu Toggle
+  $(".mobile-menu-btn").click(function () {
+    $(".menu").toggleClass("active");
+  });
 
-setInterval(nextImage, 10000);
+  // Smooth Scroll for Menu Items
+  $('a[href^="#"]').on("click", function (event) {
+    var target = $(this.getAttribute("href"));
+    if (target.length) {
+      event.preventDefault();
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: target.offset().top - 70,
+          },
+          1000
+        );
+    }
+  });
 
-function nextImage() {
-  count = (count % 6) + 1;
-  document.getElementById(`radio${count}`).checked = true;
-}
+  // Dark Mode Toggle
+  $("#chk").change(function () {
+    $("body").toggleClass("dark-mode");
+  });
 
-// Controle do modo escuro
-const chk = document.getElementById("chk");
-const logoImg = document.querySelector(".logo img");
+  // Back to Top Button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $("#backToTopBtn").fadeIn();
+    } else {
+      $("#backToTopBtn").fadeOut();
+    }
+  });
 
-chk.addEventListener("change", () => {
-  document.body.classList.toggle("dark");
+  $("#backToTopBtn").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 800);
+    return false;
+  });
 
-  setTimeout(() => {
-    logoImg.src = document.body.classList.contains("dark")
-      ? "img/logodark.png"
-      : "img/logo.png";
-  }, 250);
+  // Form Validation
+  $(".contact-form").submit(function (e) {
+    var requiredInputs = $(this).find("input[required], textarea[required]");
+    var errors = false;
+
+    requiredInputs.each(function () {
+      if ($(this).val().trim() === "") {
+        $(this).addClass("error");
+        errors = true;
+      } else {
+        $(this).removeClass("error");
+      }
+    });
+
+    if (errors) {
+      e.preventDefault();
+      alert("Por favor, preencha todos os campos obrigatórios.");
+    }
+  });
+
+  // Animate on Scroll
+  $(window).scroll(function () {
+    $(".fade-in").each(function () {
+      var position = $(this).offset().top;
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll > position - windowHeight + 100) {
+        $(this).addClass("visible");
+      }
+    });
+  });
+
+  // Initialize animation on page load
+  $(".fade-in").each(function () {
+    $(this).addClass("visible");
+  });
 });
-
-// Inicializa o efeito de inclinação das cartas
-VanillaTilt.init(document.querySelectorAll(".card"), {
-  max: 25,
-  speed: 400,
-  glare: true,
-  "max-glare": 0.5,
-});
-
-// Controle do botão de voltar ao topo
-window.onscroll = function () {
-  const btn = document.getElementById("backToTopBtn");
-  btn.style.display =
-    document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
-      ? "block"
-      : "none";
-};
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
